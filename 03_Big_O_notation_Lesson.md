@@ -83,30 +83,30 @@ Now you should understand the What and the Why of big-O notation, as well as How
 ```python
 
 def inc(x):
-return x+
+    return x+
 ```
 
 ```python
 
 def mul(x, y):
-return x*y
+    return x*y
 ```
 
 ```python
 
 def foo(x):
-y = x*77.
-return x/8.
+    y = x*77.
+    return x/8.
 ```
 
 ```python
 
 def bar(x, y):
-z = x + y
-w = x * y
-q = (w**z) % 870
+    z = x + y
+    w = x * y
+    q = (w**z) % 870
 
-return 9*q
+    return 9*q
 
 ```
 
@@ -122,11 +122,11 @@ return 9*q
 ```python
 
 def mul2(x, y):
-result = 0
+    result = 0
 
-for i in range(y):
-result += x
-return result
+    for i in range(y):
+        result += x
+    return result
 
 ```
 
@@ -141,11 +141,11 @@ Here, this function is O(y) - the way we’ve defined it is dependent on the siz
 ```python
 
 def factorial(n):
-result = 1
+    result = 1
 
-for num in range(1, n+1):
-result *= num
-return num
+    for num in range(1, n+1):
+        result *= num
+    return num
 
 ```
 
@@ -156,15 +156,15 @@ return num
 ```python
 
 def factorial2(n):
-result = 1
+    result = 1
 
-count = 0
+    count = 0
 
-for num in range(1, n+1):
-result *= num
-count += 1
+    for num in range(1, n+1):
+        result *= num
+        count += 1
 
-return num
+    return num
 
 ```
 
@@ -181,12 +181,12 @@ return num
 ```python
 
 def count_ts(a_str):
-count = 0
-for char in a_str:
-if char == ’t’:
-count += 1
+    count = 0
+    for char in a_str:
+        if char == ’t’:
+        count += 1
 
-return count
+    return count
 ```
 In this example, we used an if statement. The analysis of the runtime of a conditional is highly dependent upon what the conditional’s condition actually is; checking if one character is equal to another is a constant-time operation, so this example is linear with respect to the size of a str. So, if we let n = |a str|, this function is O(n).
 
@@ -195,13 +195,13 @@ In this example, we used an if statement. The analysis of the runtime of a condi
 ```python
 
 def count_same_ltrs(a_str, b_str):
-count = 0
+    count = 0
 
-for char in a_str:
-if char in b_str:
-count += 1
+    for char in a_str:
+        if char in b_str:
+            count += 1
 
-return count
+    return count
 
 ```
 
@@ -220,11 +220,11 @@ big-O notation is an upper bound on the worst-case running time. Sometimes analy
 ```python
 
 def factorial3(n):
-result = 1
+    result = 1
 
-while n > 0:
-result *= n
-n -= 1
+    while n > 0:
+    result *= n
+    n -= 1
 
 return result
 
@@ -235,14 +235,14 @@ return result
 ```python
 
 def char_split(a_str):
-result = []
-index = 0
+    result = []
+    index = 0
 
-while len(a_str) != len(result):
-result.append(a_str[index])
-index += 1
+    while len(a_str) != len(result):
+        result.append(a_str[index])
+        index += 1
 
-return result
+    return result
 
 ```
 
@@ -258,11 +258,11 @@ here: http://wiki.python.org/moin/TimeComplexity
 
 ```python
 
-result = 0
+    result = 0
 
-for i in range(z):
-for j in range(z):
-result += (i*j)
+    for i in range(z):
+        for j in range(z):
+            result += (i*j)
 
 ```
 
@@ -275,11 +275,11 @@ Recursion. Recursion can be tricky to figure out; think of recursion like a tree
 ```python
 
 def r_factorial(n):
-if n <= 0:
-return 1
+    if n <= 0:
+        return 1
 
-else:
-return n*r_factorial(n-1)
+    else:
+        return n*r_factorial(n-1)
 
 ```
 
@@ -291,10 +291,10 @@ In general, we can say that any recursive function g(x) whose recursive call is 
 ```python
 
 def foo(n):
-if n <= 1:
-return 1
+    if n <= 1:
+        return 1
 
-return foo(n/2) + 1
+    return foo(n/2) + 1
 
 ```
 
